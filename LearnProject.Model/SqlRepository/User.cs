@@ -8,8 +8,6 @@ namespace LearnProject.Model
 {
     public partial class SqlRepository 
     {
-        
-
         public IQueryable<User> Users
         {
             get

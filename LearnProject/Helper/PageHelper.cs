@@ -23,7 +23,6 @@ namespace LearnProject.Helper
         {
             StringBuilder builder = new StringBuilder();
 
-            //Prev
             var prevBuilder = new TagBuilder("a");
             prevBuilder.InnerHtml = "«";
             if (currentPage == 1)
@@ -36,10 +35,10 @@ namespace LearnProject.Helper
                 prevBuilder.MergeAttribute("href", pageUrl.Invoke(currentPage - 1));
                 builder.AppendLine("<li>" + prevBuilder.ToString() + "</li>");
             }
-            //По порядку
+
             for (int i = 1; i <= totalPages; i++)
             {
-                //Условие что выводим только необходимые номера
+
                 if (((i <= 3) || (i > (totalPages - 3))) || ((i > (currentPage - 2)) && (i < (currentPage + 2))))
                 {
                     var subBuilder = new TagBuilder("a");
@@ -57,16 +56,16 @@ namespace LearnProject.Helper
                 }
                 else if ((i == 4) && (currentPage > 5))
                 {
-                    //Троеточие первое
+
                     builder.AppendLine("<li class=\"disabled\"> <a href=\"#\">...</a> </li>");
                 }
                 else if ((i == (totalPages - 3)) && (currentPage < (totalPages - 4)))
                 {
-                    //Троеточие второе
+
                     builder.AppendLine("<li class=\"disabled\"> <a href=\"#\">...</a> </li>");
                 }
             }
-            //Next
+
             var nextBuilder = new TagBuilder("a");
             nextBuilder.InnerHtml = "»";
             if (currentPage == totalPages)

@@ -11,7 +11,6 @@ namespace LearnProject.Model
     {
         [Inject]
         public LearnProjectDbDataContext Db { get; set; }
-
-       
+    
     }
 }

@@ -3,19 +3,12 @@ using LearnProject.Model;
 
 namespace LearnProject.Global.Auth
 {
-    /// <summary>
-    /// Реализация интерфейса для идентификации пользователя
-    /// </summary>
+
     public class UserIdentity: IIdentity, IUserProvider
     {
-        /// <summary>
-        /// Текщий пользователь
-        /// </summary>
+
         public User User { get; set; }
 
-        /// <summary>
-        /// Тип класса для пользователя
-        /// </summary>
         public string AuthenticationType
         {
             get
@@ -24,9 +17,6 @@ namespace LearnProject.Global.Auth
             }
         }
 
-        /// <summary>
-        /// Авторизован или нет
-        /// </summary>
         public bool IsAuthenticated
         {
             get
@@ -35,9 +25,6 @@ namespace LearnProject.Global.Auth
             }
         }
 
-        /// <summary>
-        /// Имя пользователя (уникальное) [у нас это счас Email]
-        /// </summary>
         public string Name
         {
             get
@@ -51,10 +38,6 @@ namespace LearnProject.Global.Auth
             }
         }
 
-        /// <summary>
-        /// Инициализация по имени
-        /// </summary>
-        /// <param name="email">имя пользователя [email]</param>
         public void Init(string email, IRepository repository)
         {
             if (!string.IsNullOrEmpty(email))
