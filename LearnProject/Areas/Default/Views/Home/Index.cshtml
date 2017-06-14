@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "LearnProject";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+
+<h2>LearnProject</h2>
+
+<p>
+    <div class="menu">
+    <a href="@Url.Action("Index", "Role", new { id = "1" })">Роли</a>
+    @Html.ActionLink("Пользователи",  "Index", "User")
+    @Html.ActionLink("Регистрация", "Register", "User")
+    </div>
+    
+</p>
